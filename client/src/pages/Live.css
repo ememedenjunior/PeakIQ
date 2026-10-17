@@ -1,0 +1,51 @@
+/* Live classes. Uses the site's design tokens; the stage is the dark "summit night" surface. */
+
+.live { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: var(--s-5); align-items: start; }
+.live-main { min-width: 0; }
+.live-head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--s-4); flex-wrap: wrap; margin-bottom: var(--s-3); }
+.live-head h1 { font-size: var(--fs-xl); margin: 0; }
+.live-head p { margin: 4px 0 0; }
+.live-meta { display: flex; gap: var(--s-3); align-items: center; font-variant-numeric: tabular-nums; color: var(--muted); font-size: var(--fs-sm); }
+
+.live-stage { position: relative; background: var(--ink); border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 16 / 9; max-height: 72vh; width: 100%; }
+.live-stage video { width: 100%; height: 100%; object-fit: contain; background: var(--ink); display: block; }
+.live-overlay {
+  position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+  background: rgba(18, 16, 58, 0.82); color: #fff; padding: var(--s-5); font-size: var(--fs-lg);
+}
+.live-overlay p { margin: 0; }
+.live-overlay.tap { border: 0; cursor: pointer; font: inherit; font-weight: 600; width: 100%; }
+.live-badge { position: absolute; left: var(--s-3); top: var(--s-3); background: var(--sun); color: var(--ink); font-size: var(--fs-sm); font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+
+.live-controls { display: flex; gap: var(--s-2); align-items: center; flex-wrap: wrap; margin-top: var(--s-3); }
+.live-controls .grow { flex: 1; }
+.btn.danger { background: var(--err); border-color: var(--err); color: #fff; }
+.btn.danger:hover { background: #a61f2d; border-color: #a61f2d; }
+.danger-text { color: var(--err) !important; }
+
+.live-side { padding: 0; display: flex; flex-direction: column; height: min(72vh, 640px); min-height: 360px; overflow: hidden; }
+.live-tabs { display: flex; border-bottom: 1px solid var(--line); }
+.live-tabs button { flex: 1; background: none; border: 0; padding: var(--s-3); font: inherit; font-weight: 600; color: var(--muted); cursor: pointer; border-bottom: 3px solid transparent; }
+.live-tabs button[aria-selected='true'] { color: var(--peak); border-bottom-color: var(--peak); }
+
+.live-chat { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.live-log { flex: 1; overflow-y: auto; padding: var(--s-4); display: flex; flex-direction: column; gap: var(--s-2); }
+.live-log p { margin: 0; overflow-wrap: anywhere; line-height: 1.4; }
+.live-log strong { color: var(--ink); margin-right: 4px; }
+.live-log .from-host { background: var(--peak-50); padding: 6px 10px; border-radius: var(--r-sm); }
+.live-err { padding: 0 var(--s-4); margin: 0; font-size: var(--fs-sm); }
+.live-compose { display: flex; gap: var(--s-2); padding: var(--s-3); border-top: 1px solid var(--line); }
+.live-compose input { flex: 1; min-width: 0; }
+
+.live-people { list-style: none; margin: 0; padding: var(--s-3) var(--s-4); overflow-y: auto; flex: 1; }
+.live-people li { display: flex; justify-content: space-between; align-items: center; gap: var(--s-3); padding: var(--s-2) 0; border-bottom: 1px solid var(--line); }
+.live-actions { display: flex; gap: var(--s-3); font-size: var(--fs-sm); }
+
+.live-gate { max-width: 620px; margin: var(--s-7) auto; }
+.live-table { width: 100%; border-collapse: collapse; margin-bottom: var(--s-4); }
+.live-table th, .live-table td { text-align: left; padding: var(--s-2) var(--s-3); border-bottom: 1px solid var(--line); }
+
+@media (max-width: 900px) {
+  .live { grid-template-columns: 1fr; }
+  .live-side { height: 420px; }
+}
