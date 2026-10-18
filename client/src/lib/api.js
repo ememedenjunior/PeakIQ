@@ -2,7 +2,7 @@ const TOKEN_KEY = 'peakiq_token';
 
 // Where the API lives. Empty means same origin: production behind one domain, or the Vite dev proxy.
 // Set VITE_API_URL at build time only if the API is hosted on a different domain.
-export const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+export const API_BASE = "https://peakiq-backend-production.up.railway.app"
 
 const TIMEOUT_MS = 20000;
 
